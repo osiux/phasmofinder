@@ -17,7 +17,7 @@ const Button = styled.button(
 	]
 );
 const ResetButton = tw.button`block bg-gray-500 text-gray-50 w-full rounded mt-8 p-1`;
-const ObjectivesContainer = tw.section`flex justify-between flex-wrap md:flex-nowrap`;
+const ObjectivesContainer = tw.section`flex justify-between flex-wrap`;
 const ObjectiveButton = styled.button(({ selected }: { selected: boolean }) => [
 	tw`text-gray-700 py-1 px-5 mt-2 bg-gray-200 rounded-lg focus:outline-none`,
 	selected && tw`bg-gray-700 text-white border-gray-700`,
