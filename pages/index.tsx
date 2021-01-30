@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 
-import { Filters, Footer, Ghosts, Navigation } from '@app/components';
+import { EvidenceSelector, Footer, Ghosts, Navigation, Overview } from '@app/components';
 
 import { EvidenceContextProvider } from '@app/contexts/EvidenceContext';
 
@@ -10,7 +10,8 @@ const Home = () => (
 	<EvidenceContextProvider>
 		<Navigation />
 		<Main>
-			<Filters />
+			<Overview />
+			<EvidenceSelector />
 			<Ghosts />
 			<Footer />
 		</Main>

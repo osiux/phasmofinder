@@ -5,7 +5,7 @@ import {
 	GiBookCover,
 	GiThermometerCold,
 	GiLaserSparks,
-	GiAudioCassette,
+	GiMovementSensor,
 } from 'react-icons/gi';
 
 export type EvidenceTypes =
@@ -30,10 +30,12 @@ type Ghost = {
 	weaknesses: string;
 };
 
+type Objective = string[];
+
 const evidenceTypes: EvidenceObject = {
 	emf: {
 		name: 'EMF Level 5',
-		icon: GiAudioCassette,
+		icon: GiMovementSensor,
 	},
 	temperature: {
 		name: 'Freezing Temperatures',
@@ -143,4 +145,16 @@ const ghosts: Ghost[] = [
 	},
 ];
 
-export { evidenceTypes, ghosts };
+const optionalObjectives: Objective = [
+	'EMF',
+	'Temperature',
+	'Sink',
+	'Photo',
+	'Motion',
+	'Crucifix',
+	'Event',
+	'Smudge',
+	'Salt',
+];
+
+export { evidenceTypes, ghosts, optionalObjectives };

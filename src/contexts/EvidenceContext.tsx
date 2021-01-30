@@ -1,9 +1,15 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, Dispatch, SetStateAction } from 'react';
 import * as R from 'ramda';
 
 import type { EvidenceTypes } from '@app/config';
 
 type EvidenceContextType = {
+	name: string;
+	setName: (name: string) => void;
+	answersTo: 'everyone' | 'alone' | '';
+	setAnswersTo: Dispatch<SetStateAction<'everyone' | 'alone' | ''>>;
+	objectives: string[];
+	assignObjectives: (objective: string) => void;
 	assignEvidence: (evidence: EvidenceTypes) => void;
 	selected: EvidenceTypes[];
 	discarded: EvidenceTypes[];
@@ -13,8 +19,19 @@ type EvidenceContextType = {
 const EvidenceContext = createContext<EvidenceContextType>(null);
 
 export const EvidenceContextProvider = ({ children }) => {
+	const [name, setName] = useState('');
+	const [answersTo, setAnswersTo] = useState<'everyone' | 'alone' | ''>('');
+	const [objectives, setObjectives] = useState<string[]>([]);
 	const [selected, setSelected] = useState<EvidenceTypes[]>([]);
 	const [discarded, setDiscarded] = useState<EvidenceTypes[]>([]);
+
+	const assignObjectives = (objective: string) => {
+		if (objectives.includes(objective)) {
+			setObjectives(R.without([objective]));
+		} else {
+			setObjectives(R.append(objective));
+		}
+	};
 
 	const assignEvidence = (evidence: EvidenceTypes) => {
 		if (selected.includes(evidence)) {
@@ -28,6 +45,9 @@ export const EvidenceContextProvider = ({ children }) => {
 	};
 
 	const reset = () => {
+		setName('');
+		setAnswersTo('');
+		setObjectives([]);
 		setSelected([]);
 		setDiscarded([]);
 	};
@@ -35,6 +55,12 @@ export const EvidenceContextProvider = ({ children }) => {
 	return (
 		<EvidenceContext.Provider
 			value={{
+				name,
+				setName,
+				answersTo,
+				setAnswersTo,
+				objectives,
+				assignObjectives,
 				selected,
 				discarded,
 				assignEvidence,

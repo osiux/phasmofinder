@@ -7,7 +7,7 @@ import { ghosts, evidenceTypes, EvidenceTypes } from '@app/config';
 
 const GhostsSection = tw.section`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8`;
 const GhostItem = tw.div`px-4 rounded-2xl bg-gray-200`;
-const GhostName = tw.h2`font-bold text-xl text-center`;
+const GhostName = tw.h3`font-bold text-xl text-center mt-2!`;
 const GhostEvidenceContainer = tw.div`flex flex-row justify-between`;
 const GhostEvidenceItem = styled.span(({ matched }: { matched: boolean }) => [
 	tw`rounded-2xl p-2 mx-0 lg:mx-2 first-of-type:ml-0`,
@@ -46,7 +46,7 @@ const Ghosts = () => {
 				return (
 					<GhostItem key={key}>
 						<GhostName>{ghost.name}</GhostName>
-						<h3>Evidence</h3>
+						<h4>Evidence</h4>
 						<GhostEvidenceContainer>
 							{ghost.evidence.map((item) => {
 								const matched = selected.includes(item);
@@ -62,9 +62,9 @@ const Ghosts = () => {
 								);
 							})}
 						</GhostEvidenceContainer>
-						<h3>Strengths</h3>
+						<h4>Strengths</h4>
 						<p>{ghost.strengths}</p>
-						<h3>Weaknesses</h3>
+						<h4>Weaknesses</h4>
 						<p>{ghost.weaknesses}</p>
 					</GhostItem>
 				);
