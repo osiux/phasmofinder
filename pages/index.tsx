@@ -1,29 +1,20 @@
 import tw from 'twin.macro';
 
-const Main = tw.main`bg-blue-200`;
+import { Filters, Footer, Ghosts, Navigation } from '@app/components';
 
-import { Layout, Navigation } from '@app/components'
+import { EvidenceContextProvider } from '@app/contexts/EvidenceContext';
 
-import { evidence, EvidenceTypes } from '@app/config';
+const Main = tw.main`container mx-auto prose-sm md:prose p-3 md:p-0`;
 
-const Home = () => {
-	return (
-		<Layout>
-			<Navigation />
-			<Main>
-				{Object.keys(evidence).map((item: EvidenceTypes) => {
-					const Icon = evidence[item].icon;
-
-					return (
-						<span>
-							<Icon size={30} />
-							{evidence[item].name}
-						</span>
-					)
-				})}
-			</Main>
-		</Layout>
-	);
-};
+const Home = () => (
+	<EvidenceContextProvider>
+		<Navigation />
+		<Main>
+			<Filters />
+			<Ghosts />
+			<Footer />
+		</Main>
+	</EvidenceContextProvider>
+);
 
 export default Home;
