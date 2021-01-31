@@ -121,6 +121,12 @@ const ghosts: Ghost[] = [
 			'Hiding from the Revenant will cause it to move very slowly.',
 	},
 	{
+		name: 'Shade',
+		evidence: ['emf', 'orb', 'writing'],
+		strengths: 'As a shy ghost, a Shade will rarely perform actions in the presence of two or more people, making it harder to detect.',
+		weaknesses: 'Conversely, a Shade will rarely start a Hunt when players are grouped together.',
+	},
+	{
 		name: 'Demon',
 		evidence: ['temperature', 'writing', 'spiritbox'],
 		strengths: 'Demons are the most aggressive and enter hunt mode more.',
