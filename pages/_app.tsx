@@ -4,6 +4,7 @@ import { Global } from '@emotion/react';
 import { GlobalStyles } from 'twin.macro';
 
 import globalStyle from '@app/styles/globals';
+import 'react-hint/css/index.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
 	<>

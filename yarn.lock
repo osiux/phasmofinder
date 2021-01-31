@@ -2287,6 +2287,11 @@ react-dom@17.0.1:
     object-assign "^4.1.1"
     scheduler "^0.20.1"
 
+react-hint@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-hint/-/react-hint-3.2.0.tgz#ca805a18330f03fb71bb7a96a34931598899e67d"
+  integrity sha512-ceKa6GaWtXEvj9eb1eOIpRouurb6WLV5fmApKNcxNbpY9xQkO6++1mXij9tlwGh4Ad/Vvv2pqlmoW17LIn1QTA==
+
 react-icons@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.1.0.tgz#9ca9bcbf2e3aee8e86e378bb9d465842947bbfc3"

@@ -1,15 +1,15 @@
-import { createContext, useState, Dispatch, SetStateAction } from 'react';
+import { createContext, useState } from 'react';
 import * as R from 'ramda';
 
-import type { EvidenceTypes } from '@app/config';
+import type { EvidenceTypes, ObjectiveTypes } from '@app/config';
 
 type EvidenceContextType = {
 	name: string;
 	setName: (name: string) => void;
 	answersTo: 'everyone' | 'alone' | '';
-	setAnswersTo: Dispatch<SetStateAction<'everyone' | 'alone' | ''>>;
+	setAnswersTo: (answersTo: 'everyone' | 'alone' | '') => void;
 	objectives: string[];
-	assignObjectives: (objective: string) => void;
+	assignObjectives: (objective: ObjectiveTypes) => void;
 	assignEvidence: (evidence: EvidenceTypes) => void;
 	selected: EvidenceTypes[];
 	discarded: EvidenceTypes[];
@@ -21,11 +21,11 @@ const EvidenceContext = createContext<EvidenceContextType>(null);
 export const EvidenceContextProvider = ({ children }) => {
 	const [name, setName] = useState('');
 	const [answersTo, setAnswersTo] = useState<'everyone' | 'alone' | ''>('');
-	const [objectives, setObjectives] = useState<string[]>([]);
+	const [objectives, setObjectives] = useState<ObjectiveTypes[]>([]);
 	const [selected, setSelected] = useState<EvidenceTypes[]>([]);
 	const [discarded, setDiscarded] = useState<EvidenceTypes[]>([]);
 
-	const assignObjectives = (objective: string) => {
+	const assignObjectives = (objective: ObjectiveTypes) => {
 		if (objectives.includes(objective)) {
 			setObjectives(R.without([objective]));
 		} else {

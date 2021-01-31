@@ -30,7 +30,23 @@ type Ghost = {
 	weaknesses: string;
 };
 
-type Objective = string[];
+export type ObjectiveTypes =
+	| 'emf'
+	| 'temperature'
+	| 'sink'
+	| 'photo'
+	| 'motion'
+	| 'crucifix'
+	| 'event'
+	| 'smudge'
+	| 'salt';
+
+type Objective = {
+	name: string;
+	description: string;
+};
+
+type ObjectiveObject = { [key in ObjectiveTypes]: Objective };
 
 const evidenceTypes: EvidenceObject = {
 	emf: {
@@ -123,8 +139,10 @@ const ghosts: Ghost[] = [
 	{
 		name: 'Shade',
 		evidence: ['emf', 'orb', 'writing'],
-		strengths: 'As a shy ghost, a Shade will rarely perform actions in the presence of two or more people, making it harder to detect.',
-		weaknesses: 'Conversely, a Shade will rarely start a Hunt when players are grouped together.',
+		strengths:
+			'As a shy ghost, a Shade will rarely perform actions in the presence of two or more people, making it harder to detect.',
+		weaknesses:
+			'Conversely, a Shade will rarely start a Hunt when players are grouped together.',
 	},
 	{
 		name: 'Demon',
@@ -151,16 +169,44 @@ const ghosts: Ghost[] = [
 	},
 ];
 
-const optionalObjectives: Objective = [
-	'EMF',
-	'Temperature',
-	'Sink',
-	'Photo',
-	'Motion',
-	'Crucifix',
-	'Event',
-	'Smudge',
-	'Salt',
-];
+const optionalObjectives: ObjectiveObject = {
+	emf: {
+		name: 'EMF',
+		description: 'Find evidence of the paranormal with an EMF Reader',
+	},
+	temperature: {
+		name: 'Temperature',
+		description:
+			'Detect a room below 10 Celsius/50 Fahrenheit with a Thermometer',
+	},
+	sink: {
+		name: 'Sink',
+		description: 'Capture a photo of Dirty Water in a sink',
+	},
+	photo: {
+		name: 'Photo',
+		description: 'Capture a photo of the Ghost',
+	},
+	motion: {
+		name: 'Motion',
+		description: 'Detect a Ghosts presence with a Motion Sensor',
+	},
+	crucifix: {
+		name: 'Crucifix',
+		description: 'Prevent the Ghost from hunting with a Crucifix',
+	},
+	event: {
+		name: 'Event',
+		description: 'Have a member of your team witness a Ghost Event',
+	},
+	smudge: {
+		name: 'Smudge',
+		description: 'Cleanse the area near the Ghost using Smudge Sticks',
+	},
+	salt: {
+		name: 'Salt',
+		description: 'Get a Ghost to walk through Salt',
+	},
+};
 
 export { evidenceTypes, ghosts, optionalObjectives };

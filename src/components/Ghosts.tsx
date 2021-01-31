@@ -7,7 +7,7 @@ import { ghosts, evidenceTypes, EvidenceTypes } from '@app/config';
 
 const GhostsSection = tw.section`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8`;
 const GhostItem = tw.div`px-4 rounded-2xl bg-gray-200`;
-const GhostName = tw.h3`font-bold text-xl text-center mt-2!`;
+const GhostName = tw.a`font-bold text-xl text-center mt-2!`;
 const GhostEvidenceContainer = tw.div`flex flex-row justify-between`;
 const GhostEvidenceItem = styled.span(({ matched }: { matched: boolean }) => [
 	tw`rounded-2xl p-2 mx-0 lg:mx-2 first-of-type:ml-0`,
@@ -45,7 +45,15 @@ const Ghosts = () => {
 
 				return (
 					<GhostItem key={key}>
-						<GhostName>{ghost.name}</GhostName>
+						<h3 tw="text-center">
+							<GhostName
+								target="_blank"
+								rel="noopener noreferrer"
+								href={`https://phasmophobia.fandom.com/wiki/${ghost.name}`}
+							>
+								{ghost.name}
+							</GhostName>
+						</h3>
 						<h4>Evidence</h4>
 						<GhostEvidenceContainer>
 							{ghost.evidence.map((item) => {
@@ -54,6 +62,7 @@ const Ghosts = () => {
 
 								return (
 									<GhostEvidenceItem
+										key={item}
 										matched={matched}
 										title={evidenceTypes[item].name}
 									>
