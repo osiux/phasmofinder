@@ -10,13 +10,40 @@ class MyDocument extends Document {
 	static async getInitialProps(ctx: DocumentContext) {
 		const initialProps = await Document.getInitialProps(ctx);
 
-		return initialProps;
+		const isProduction = process.env.NODE_ENV === 'production';
+
+		return { ...initialProps, isProduction };
 	}
 
 	render() {
+		// @ts-ignore
+		const { isProduction } = this.props;
+
 		return (
 			<Html lang="en">
-				<Head />
+				<Head>
+					{isProduction && (
+						<>
+							<script
+								async
+								src="https://www.googletagmanager.com/gtag/js?id=G-M2Q8J76RZD"
+							/>
+							<script
+								dangerouslySetInnerHTML={{
+									__html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-M2Q8J76RZD', {
+                      page_path: window.location.pathname,
+                    });
+                  `,
+								}}
+							/>
+						</>
+					)}
+				</Head>
 				<body>
 					<Main />
 					<NextScript />
