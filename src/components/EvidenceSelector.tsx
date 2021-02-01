@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import tw, { styled } from 'twin.macro';
 
 import { evidenceTypes, EvidenceTypes } from '@app/config';
-import EvidenceContext from '@app/contexts/EvidenceContext';
+import AppContext from '@app/contexts/AppContext';
 import Heading from './Heading';
 
 const EvidenceSection = tw.section`flex items-start justify-between mt-6 flex-wrap`;
@@ -15,7 +15,7 @@ const EvidenceItem = styled.button(
 );
 
 const EvidenceSelector = () => {
-	const { assignEvidence, selected, discarded } = useContext(EvidenceContext);
+	const { assignEvidence, selected, discarded } = useContext(AppContext);
 
 	return (
 		<>

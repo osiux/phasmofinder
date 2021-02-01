@@ -1,7 +1,7 @@
 import { useContext, useCallback } from 'react';
 import tw, { styled } from 'twin.macro';
 
-import EvidenceContext from '@app/contexts/EvidenceContext';
+import AppContext from '@app/contexts/AppContext';
 
 import { ghosts, evidenceTypes, EvidenceTypes } from '@app/config';
 
@@ -15,7 +15,7 @@ const GhostEvidenceItem = styled.span(({ matched }: { matched: boolean }) => [
 ]);
 
 const Ghosts = () => {
-	const { selected, discarded } = useContext(EvidenceContext);
+	const { selected, discarded } = useContext(AppContext);
 
 	const matches = useCallback(
 		(ghostEvidence: EvidenceTypes[]) => {

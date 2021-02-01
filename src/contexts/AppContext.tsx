@@ -3,7 +3,7 @@ import * as R from 'ramda';
 
 import type { EvidenceTypes, ObjectiveTypes } from '@app/config';
 
-type EvidenceContextType = {
+type AppContextType = {
 	name: string;
 	setName: (name: string) => void;
 	answersTo: 'everyone' | 'alone' | '';
@@ -16,9 +16,9 @@ type EvidenceContextType = {
 	reset: () => void;
 };
 
-const EvidenceContext = createContext<EvidenceContextType>(null);
+const AppContext = createContext<AppContextType>(null);
 
-export const EvidenceContextProvider = ({ children }) => {
+export const AppContextProvider = ({ children }) => {
 	const [name, setName] = useState('');
 	const [answersTo, setAnswersTo] = useState<'everyone' | 'alone' | ''>('');
 	const [objectives, setObjectives] = useState<ObjectiveTypes[]>([]);
@@ -53,7 +53,7 @@ export const EvidenceContextProvider = ({ children }) => {
 	};
 
 	return (
-		<EvidenceContext.Provider
+		<AppContext.Provider
 			value={{
 				name,
 				setName,
@@ -68,8 +68,8 @@ export const EvidenceContextProvider = ({ children }) => {
 			}}
 		>
 			{children}
-		</EvidenceContext.Provider>
+		</AppContext.Provider>
 	);
 };
 
-export default EvidenceContext;
+export default AppContext;

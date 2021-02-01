@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import tw, { styled } from 'twin.macro';
 import ReactHintFactory from 'react-hint';
 
-import EvidenceContext from '@app/contexts/EvidenceContext';
+import AppContext from '@app/contexts/AppContext';
 import { optionalObjectives, ObjectiveTypes } from '@app/config';
 
 import Heading from './Heading';
@@ -33,13 +33,7 @@ const Overview = () => {
 		objectives,
 		assignObjectives,
 		reset,
-	} = useContext(EvidenceContext);
-
-	const onReset = () => {
-		setName('');
-		setAnswersTo('');
-		reset();
-	};
+	} = useContext(AppContext);
 
 	return (
 		<>
@@ -73,7 +67,7 @@ const Overview = () => {
 						</Button>
 					</ButtonGroup>
 				</div>
-				<ResetButton onClick={onReset}>Reset</ResetButton>
+				<ResetButton onClick={reset}>Reset</ResetButton>
 			</Section>
 			<Heading title="Optional Objectives" />
 			<ObjectivesContainer>
