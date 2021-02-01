@@ -16,6 +16,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
 				content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,user-scalable=yes"
 			/>
 			<title>PhasmoFinder</title>
+			<meta
+				name="Description"
+				content="Tool that helps you identify ghost type and optional objectives in the game Phasmophobia."
+			/>
 			<link
 				rel="apple-touch-icon"
 				sizes="57x57"

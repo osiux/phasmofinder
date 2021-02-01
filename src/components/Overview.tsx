@@ -45,7 +45,6 @@ const Overview = () => {
 						type="text"
 						name="name"
 						autoComplete="off"
-						tabIndex={1}
 						value={name}
 						onChange={(e) => setName(e.target.value)}
 					/>

@@ -22,7 +22,7 @@ const FooterComponent = () => (
 				rel="noopener noreferrer"
 				href="https://github.com/osiux/phasmofinder"
 			>
-				<FaGithub tw="inline-block" />
+				<FaGithub tw="inline-block" /> Github
 			</a>
 		</p>
 	</Footer>
