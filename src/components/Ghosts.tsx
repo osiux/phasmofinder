@@ -45,7 +45,7 @@ const Ghosts = () => {
 				if (!isMatch) return null;
 
 				return (
-					<GhostItem key={key}>
+					<GhostItem key={key} data-testid="ghost-item">
 						<h3 tw="text-center">
 							<GhostName
 								target="_blank"

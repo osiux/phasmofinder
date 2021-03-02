@@ -3,7 +3,10 @@ import tw, { styled } from 'twin.macro';
 import ReactHintFactory from 'react-hint';
 
 import AppContext from '@app/contexts/AppContext';
-import { optionalObjectives, ObjectiveTypes } from '@app/config/optionalObjectives';
+import {
+	optionalObjectives,
+	ObjectiveTypes,
+} from '@app/config/optionalObjectives';
 
 import Heading from './Heading';
 
@@ -76,6 +79,7 @@ const Overview = () => {
 
 					return (
 						<ObjectiveButton
+							data-testid="objective-item"
 							key={item}
 							selected={selected}
 							onClick={onClick}

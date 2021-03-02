@@ -33,6 +33,7 @@ const EvidenceSelector = () => {
 
 					return (
 						<EvidenceItem
+							data-testid="evidence-item"
 							key={evidence}
 							selected={isSelected}
 							discarded={isDiscarded}
