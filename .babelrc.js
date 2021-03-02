@@ -10,5 +10,9 @@ module.exports = {
 			},
 		],
 	],
-	plugins: ['@emotion/babel-plugin', 'babel-plugin-macros', 'ramda'],
+	plugins: [
+		'@emotion/babel-plugin',
+		'babel-plugin-macros',
+		'ramda',
+	],
 };

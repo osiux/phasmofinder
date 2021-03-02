@@ -1,81 +1,13 @@
-import type { IconType } from 'react-icons';
-import {
-	GiFingerPrint,
-	GiPocketRadio,
-	GiBookCover,
-	GiThermometerCold,
-	GiLaserSparks,
-	GiMovementSensor,
-} from 'react-icons/gi';
+import type { EvidenceTypes } from './evidenceTypes';
 
-export type EvidenceTypes =
-	| 'emf'
-	| 'temperature'
-	| 'fingerprints'
-	| 'writing'
-	| 'spiritbox'
-	| 'orb';
-
-type Evidence = {
+export type Ghost = {
 	name: string;
-	icon: IconType;
-};
-
-type EvidenceObject = { [key in EvidenceTypes]: Evidence };
-
-type Ghost = {
-	name: string;
-	evidence: Array<keyof EvidenceObject>;
+	evidence: EvidenceTypes[];
 	strengths: string;
 	weaknesses: string;
 };
 
-export type ObjectiveTypes =
-	| 'emf'
-	| 'temperature'
-	| 'sink'
-	| 'photo'
-	| 'motion'
-	| 'crucifix'
-	| 'event'
-	| 'smudge'
-	| 'salt';
-
-type Objective = {
-	name: string;
-	description: string;
-};
-
-type ObjectiveObject = { [key in ObjectiveTypes]: Objective };
-
-const evidenceTypes: EvidenceObject = {
-	emf: {
-		name: 'EMF Level 5',
-		icon: GiMovementSensor,
-	},
-	temperature: {
-		name: 'Freezing Temperatures',
-		icon: GiThermometerCold,
-	},
-	fingerprints: {
-		name: 'Fingerprints',
-		icon: GiFingerPrint,
-	},
-	writing: {
-		name: 'Ghost Writing',
-		icon: GiBookCover,
-	},
-	spiritbox: {
-		name: 'Spirit Box',
-		icon: GiPocketRadio,
-	},
-	orb: {
-		name: 'Ghost Orb',
-		icon: GiLaserSparks,
-	},
-};
-
-const ghosts: Ghost[] = [
+export const ghosts: Ghost[] = [
 	{
 		name: 'Spirit',
 		evidence: ['writing', 'fingerprints', 'spiritbox'],
@@ -168,45 +100,3 @@ const ghosts: Ghost[] = [
 			'Being more active will make the Oni easier to find and identify.',
 	},
 ];
-
-const optionalObjectives: ObjectiveObject = {
-	emf: {
-		name: 'EMF',
-		description: 'Find evidence of the paranormal with an EMF Reader',
-	},
-	temperature: {
-		name: 'Temperature',
-		description:
-			'Detect a room below 10 Celsius/50 Fahrenheit with a Thermometer',
-	},
-	sink: {
-		name: 'Sink',
-		description: 'Capture a photo of Dirty Water in a sink',
-	},
-	photo: {
-		name: 'Photo',
-		description: 'Capture a photo of the Ghost',
-	},
-	motion: {
-		name: 'Motion',
-		description: 'Detect a Ghosts presence with a Motion Sensor',
-	},
-	crucifix: {
-		name: 'Crucifix',
-		description: 'Prevent the Ghost from hunting with a Crucifix',
-	},
-	event: {
-		name: 'Event',
-		description: 'Have a member of your team witness a Ghost Event',
-	},
-	smudge: {
-		name: 'Smudge',
-		description: 'Cleanse the area near the Ghost using Smudge Sticks',
-	},
-	salt: {
-		name: 'Salt',
-		description: 'Get a Ghost to walk through Salt',
-	},
-};
-
-export { evidenceTypes, ghosts, optionalObjectives };

@@ -3,7 +3,7 @@ import tw, { styled } from 'twin.macro';
 import ReactHintFactory from 'react-hint';
 
 import AppContext from '@app/contexts/AppContext';
-import { optionalObjectives, ObjectiveTypes } from '@app/config';
+import { optionalObjectives, ObjectiveTypes } from '@app/config/optionalObjectives';
 
 import Heading from './Heading';
 

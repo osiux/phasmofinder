@@ -1,7 +1,9 @@
 import { createContext, useState } from 'react';
 import * as R from 'ramda';
 
-import type { EvidenceTypes, ObjectiveTypes } from '@app/config';
+import type { EvidenceTypes } from '@app/config/evidenceTypes';
+import type { ObjectiveTypes } from '@app/config/optionalObjectives';
+import type { MapsTypes } from '@app/config/maps';
 
 type AppContextType = {
 	name: string;
@@ -13,6 +15,8 @@ type AppContextType = {
 	assignEvidence: (evidence: EvidenceTypes) => void;
 	selected: EvidenceTypes[];
 	discarded: EvidenceTypes[];
+	map: MapsTypes | null;
+	setMap: (map: MapsTypes | null) => void;
 	reset: () => void;
 };
 
@@ -24,6 +28,7 @@ export const AppContextProvider = ({ children }) => {
 	const [objectives, setObjectives] = useState<ObjectiveTypes[]>([]);
 	const [selected, setSelected] = useState<EvidenceTypes[]>([]);
 	const [discarded, setDiscarded] = useState<EvidenceTypes[]>([]);
+	const [map, setMap] = useState<MapsTypes | null>(null);
 
 	const assignObjectives = (objective: ObjectiveTypes) => {
 		if (objectives.includes(objective)) {
@@ -50,6 +55,7 @@ export const AppContextProvider = ({ children }) => {
 		setObjectives([]);
 		setSelected([]);
 		setDiscarded([]);
+		setMap(null);
 	};
 
 	return (
@@ -64,6 +70,8 @@ export const AppContextProvider = ({ children }) => {
 				selected,
 				discarded,
 				assignEvidence,
+				map,
+				setMap,
 				reset,
 			}}
 		>

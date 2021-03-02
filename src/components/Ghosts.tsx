@@ -3,7 +3,8 @@ import tw, { styled } from 'twin.macro';
 
 import AppContext from '@app/contexts/AppContext';
 
-import { ghosts, evidenceTypes, EvidenceTypes } from '@app/config';
+import { ghosts } from '@app/config/ghosts';
+import { evidenceTypes, EvidenceTypes } from '@app/config/evidenceTypes';
 
 const GhostsSection = tw.section`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8`;
 const GhostItem = tw.div`px-4 rounded-2xl bg-gray-200`;

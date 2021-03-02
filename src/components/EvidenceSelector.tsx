@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import tw, { styled } from 'twin.macro';
 
-import { evidenceTypes, EvidenceTypes } from '@app/config';
+import { evidenceTypes, EvidenceTypes } from '@app/config/evidenceTypes';
 import AppContext from '@app/contexts/AppContext';
 import Heading from './Heading';
 

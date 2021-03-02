@@ -10,12 +10,16 @@ import * as gtag from '@app/ga';
 import globalStyle from '@app/styles/globals';
 import 'react-hint/css/index.css';
 
+import { AppContextProvider } from '@app/contexts/AppContext';
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	const router = useRouter();
 
 	useEffect(() => {
 		const handleRouteChange = (url: URL) => {
-			gtag.pageview(url);
+			if (typeof window.gtag !== 'undefined') {
+				gtag.pageview(url);
+			}
 		};
 
 		router.events.on('routeChangeComplete', handleRouteChange);
@@ -117,7 +121,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 			</Head>
 			<GlobalStyles />
 			<Global styles={globalStyle} />
-			<Component {...pageProps} />
+			<AppContextProvider>
+				<Component {...pageProps} />
+			</AppContextProvider>
 		</>
 	);
 };
