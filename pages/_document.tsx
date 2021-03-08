@@ -5,14 +5,18 @@ import Document, {
 	NextScript,
 	DocumentContext,
 } from 'next/document';
+import { extractCritical } from '@emotion/server';
 
 class MyDocument extends Document {
 	static async getInitialProps(ctx: DocumentContext) {
 		const initialProps = await Document.getInitialProps(ctx);
 
+		const page = await ctx.renderPage();
+		const styles = extractCritical(page.html);
+
 		const isProduction = process.env.NODE_ENV === 'production';
 
-		return { ...initialProps, isProduction };
+		return { ...initialProps, ...page, ...styles, isProduction };
 	}
 
 	render() {
@@ -43,6 +47,12 @@ class MyDocument extends Document {
 							/>
 						</>
 					)}
+					<style
+						// @ts-ignore
+						data-emotion-css={this.props.ids.join(' ')}
+						// @ts-ignore
+						dangerouslySetInnerHTML={{ __html: this.props.css }}
+					/>
 				</Head>
 				<body>
 					<Main />
