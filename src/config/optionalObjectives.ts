@@ -39,7 +39,7 @@ export const optionalObjectives = {
 		description: 'Get a Ghost to walk through Salt',
 	},
 	candle: {
-		name: 'Candle',
+		name: '[BETA] Candle',
 		description: 'Detect a Ghost presence with a Candle',
 	},
 	parabolicMic: {
