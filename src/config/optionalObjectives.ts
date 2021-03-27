@@ -39,23 +39,23 @@ export const optionalObjectives = {
 		description: 'Get a Ghost to walk through Salt',
 	},
 	candle: {
-		name: '[BETA] Candle',
+		name: 'Candle',
 		description: 'Detect a Ghost presence with a Candle',
 	},
 	parabolicMic: {
-		name: '[BETA] Parabolic Mic',
+		name: 'Parabolic Mic',
 		description: 'Detect Ghost footsteps with a Parabolic Mic during a hunt',
 	},
 	escape: {
-		name: '[BETA] Escape',
+		name: 'Escape',
 		description: 'Intermediate and Professional: Escape the Ghost during a hunt with no deaths',
 	},
 	smudgeHunt: {
-		name: '[BETA] Smudge during Hunt',
+		name: 'Smudge during Hunt',
 		description: 'Professional: Use a smudge stick while the ghost is hunting a player',
 	},
 	sanity: {
-		name: '[BETA] Avg. Sanity',
+		name: 'Avg. Sanity',
 		description: 'Multiplayer: Get an average sanity below 25%',
 	},
 };
