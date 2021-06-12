@@ -19,6 +19,12 @@ export const maps = {
 		width: 1000,
 		height: 852,
 	},
+	willow: {
+		alt: 'Willow Street House',
+		src: '/images/Map_Willow_Street_House.webp',
+		width: 622,
+		height: 500,
+	},
 	grafton: {
 		alt: 'Grafton Farmhouse',
 		src: '/images/grafton-farmhouse.webp',

@@ -99,4 +99,16 @@ export const ghosts: Ghost[] = [
 		weaknesses:
 			'Being more active will make the Oni easier to find and identify.',
 	},
+	{
+		name: 'Yokai [beta]',
+		evidence: ['spiritbox', 'writing', 'orb'],
+		strengths: 'Talking near a Yokai will anger it and cause it to attack more often.',
+		weaknesses: 'While hunting, it can only hear voices close to it.',
+	},
+	{
+		name: 'Hantu [beta]',
+		evidence: ['fingerprints', 'writing', 'orb'],
+		strengths: 'Moves faster in colder areas.',
+		weaknesses: 'Moves slower in warmer areas.',
+	}
 ];
