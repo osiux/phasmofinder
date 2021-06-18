@@ -41,7 +41,11 @@ const Maps = () => {
 			{map && (
 				<div>
 					<h2>{maps[map].alt}</h2>
-					<Image layout="responsive" {...maps[map]} />
+					<Image
+						layout="responsive"
+						{...maps[map]}
+						alt={maps[map].alt}
+					/>
 				</div>
 			)}
 		</Layout>

@@ -7,7 +7,9 @@ module.exports = {
 		'^.+\\.(ts|tsx)$': 'babel-jest',
 	},
 	moduleNameMapper: {
-		'\\.(gif|ttf|eot|svg|png|webp|jpg)$': '<rootDir>/test/__mocks__/fileMock.js',
-		"^@app(.*)$": "<rootDir>/src$1",
+		'\\.(gif|ttf|eot|svg|png|webp|jpg)$':
+			'<rootDir>/test/__mocks__/fileMock.js',
+		'^@app(.*)$': '<rootDir>/src$1',
 	},
+	testEnvironment: 'jsdom',
 };

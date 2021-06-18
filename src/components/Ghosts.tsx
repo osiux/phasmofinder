@@ -50,7 +50,7 @@ const Ghosts = () => {
 							<GhostName
 								target="_blank"
 								rel="noopener noreferrer"
-								href={`https://phasmophobia.fandom.com/wiki/${ghost.name.replace(' [beta]', '')}`}
+								href={`https://phasmophobia.fandom.com/wiki/${ghost.name}`}
 							>
 								{ghost.name}
 							</GhostName>

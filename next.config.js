@@ -11,14 +11,6 @@ module.exports = withPWA({
 		skipWaiting: false,
 		runtimeCaching,
 	},
-	webpack: (config, { isServer }) => {
-		// Fixes packages that depend on fs/module module
-		if (!isServer) {
-			config.node = { fs: 'empty', module: 'empty' };
-		}
-
-		return config;
-	},
 	images: {
 		deviceSizes: [640, 768, 1024, 1280, 1536],
 	},
