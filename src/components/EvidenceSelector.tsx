@@ -5,7 +5,7 @@ import { evidenceTypes, EvidenceTypes } from '@app/config/evidenceTypes';
 import AppContext from '@app/contexts/AppContext';
 import Heading from './Heading';
 
-const EvidenceSection = tw.section`grid grid-cols-3 gap-2 md:grid-cols-6`;
+const EvidenceSection = tw.section`grid grid-cols-3 gap-2 md:grid-cols-7`;
 const EvidenceItem = styled.button(
 	({ selected, discarded }: { selected?: boolean; discarded?: boolean }) => [
 		tw`border-gray-200 flex flex-col items-center align-middle p-2 outline-none rounded-xl hover:shadow-md focus:outline-none`,

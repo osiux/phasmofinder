@@ -10,7 +10,7 @@ export type Ghost = {
 export const ghosts: Ghost[] = [
 	{
 		name: 'Spirit',
-		evidence: ['writing', 'fingerprints', 'spiritbox'],
+		evidence: ['emf', 'spiritbox', 'writing'],
 		strengths:
 			'The spirit has no discernible strengths, however it is known to increase its hunting as your sanity drops.',
 		weaknesses:
@@ -18,7 +18,7 @@ export const ghosts: Ghost[] = [
 	},
 	{
 		name: 'Wraith',
-		evidence: ['fingerprints', 'temperature', 'spiritbox'],
+		evidence: ['emf', 'spiritbox', 'dots'],
 		strengths:
 			'Almost never touch the ground. Footprint sounds from a wraith will be rare to non-existent, and they can travel directly through walls doors.',
 		weaknesses:
@@ -26,21 +26,21 @@ export const ghosts: Ghost[] = [
 	},
 	{
 		name: 'Phantom',
-		evidence: ['emf', 'temperature', 'orb'],
+		evidence: ['spiritbox', 'fingerprints', 'dots'],
 		strengths: 'Looking at a Phantom will considerably drop your Sanity.',
 		weaknesses:
 			' Taking a photo of the Phantom will make it temporarily disappear. This, however, will not stop a Hunt.',
 	},
 	{
 		name: 'Poltergeist',
-		evidence: ['orb', 'fingerprints', 'spiritbox'],
+		evidence: ['spiritbox', 'fingerprints', 'writing'],
 		strengths:
 			'Is capable of influencing more objects at once than any other Ghosts, and is capable of shutting multiple doors at once.',
 		weaknesses: 'Is almost ineffective in an empty room. ',
 	},
 	{
 		name: 'Banshee',
-		evidence: ['emf', 'fingerprints', 'temperature'],
+		evidence: ['fingerprints', 'orb', 'dots'],
 		strengths:
 			'Wll focus on one player at a time until it kills them or the player leaves the building.',
 		weaknesses:
@@ -48,21 +48,21 @@ export const ghosts: Ghost[] = [
 	},
 	{
 		name: 'Jinn',
-		evidence: ['emf', 'orb', 'spiritbox'],
+		evidence: ['emf', 'fingerprints', 'temperature'],
 		strengths: 'Will travel at a faster speed if its victim is far away.',
 		weaknesses:
 			"Turning off the location's power source will prevent the Jinn from using its ability.",
 	},
 	{
 		name: 'Mare',
-		evidence: ['temperature', 'orb', 'spiritbox'],
+		evidence: ['spiritbox', 'orb', 'writing'],
 		strengths:
 			' Increased chance to attack in the dark. As such, it will do what it can to achieve this, such as turning off lights and tripping the fuse box.',
 		weaknesses: 'Turning the lights on will lower its chance to attack.',
 	},
 	{
 		name: 'Revenant',
-		evidence: ['emf', 'fingerprints', 'writing'],
+		evidence: ['orb', 'writing', 'temperature'],
 		strengths:
 			'Will travel at a significantly faster speed when hunting a victim. Additionally, can freely switch whoever it is targeting during a Hunt.',
 		weaknesses:
@@ -70,7 +70,7 @@ export const ghosts: Ghost[] = [
 	},
 	{
 		name: 'Shade',
-		evidence: ['emf', 'orb', 'writing'],
+		evidence: ['emf', 'writing', 'temperature'],
 		strengths:
 			'As a shy ghost, a Shade will rarely perform actions in the presence of two or more people, making it harder to detect.',
 		weaknesses:
@@ -78,14 +78,14 @@ export const ghosts: Ghost[] = [
 	},
 	{
 		name: 'Demon',
-		evidence: ['temperature', 'writing', 'spiritbox'],
+		evidence: ['fingerprints', 'writing', 'temperature'],
 		strengths: 'Demons are the most aggressive and enter hunt mode more.',
 		weaknesses:
 			"Asking a Demon successful questions on the Ouija Board won't lower the user's sanity.",
 	},
 	{
 		name: 'Yurei',
-		evidence: ['temperature', 'orb', 'writing'],
+		evidence: ['orb', 'temperature', 'dots'],
 		strengths:
 			"Yurei have been known to have a stronger effect on people's Sanity during a manifestation.",
 		weaknesses:
@@ -93,23 +93,35 @@ export const ghosts: Ghost[] = [
 	},
 	{
 		name: 'Oni',
-		evidence: ['emf', 'writing', 'spiritbox'],
+		evidence: ['emf', 'temperature', 'dots'],
 		strengths:
 			'Oni are more active when people are nearby and have been seen moving objects at great speed.',
 		weaknesses:
 			'Being more active will make the Oni easier to find and identify.',
 	},
 	{
+		name: 'Hantu',
+		evidence: ['fingerprints', 'orb', 'temperature'],
+		strengths: 'Moves faster in colder areas.',
+		weaknesses: 'Moves slower in warmer areas.',
+	},
+	{
 		name: 'Yokai',
-		evidence: ['spiritbox', 'writing', 'orb'],
+		evidence: ['spiritbox', 'orb', 'dots'],
 		strengths:
 			'Talking near a Yokai will anger it and cause it to attack more often.',
 		weaknesses: 'While hunting, it can only hear voices close to it.',
 	},
 	{
-		name: 'Hantu',
-		evidence: ['fingerprints', 'writing', 'orb'],
-		strengths: 'Moves faster in colder areas.',
-		weaknesses: 'Moves slower in warmer areas.',
+		name: 'Goryo',
+		evidence: ['emf', 'fingerprints', 'dots'],
+		strengths: 'Will usually only show itself on camera if there are no people nearby.',
+		weaknesses: 'They are rarely seen far from their place of death.',
+	},
+	{
+		name: 'Myling',
+		evidence: ['emf', 'fingerprints', 'writing'],
+		strengths: 'Is known to be quieter when hunting.',
+		weaknesses: 'More frequently make paranormal sounds.',
 	},
 ];

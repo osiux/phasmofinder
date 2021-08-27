@@ -5,6 +5,7 @@ import {
 	GiThermometerCold,
 	GiLaserSparks,
 	GiMovementSensor,
+	GiOrbitalRays
 } from 'react-icons/gi';
 
 export type EvidenceTypes = keyof typeof evidenceTypes;
@@ -33,5 +34,9 @@ export const evidenceTypes = {
 	orb: {
 		name: 'Ghost Orb',
 		icon: GiLaserSparks,
+	},
+	dots: {
+		name: 'D.O.T.S. Projector',
+		icon: GiOrbitalRays,
 	},
 };
