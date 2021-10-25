@@ -81,7 +81,7 @@ export const ghosts: Ghost[] = [
 		evidence: ['fingerprints', 'writing', 'temperature'],
 		strengths: 'Demons are the most aggressive and enter hunt mode more.',
 		weaknesses:
-			"Asking a Demon successful questions on the Ouija Board won't lower the user's sanity.",
+			"Demons will take less sanity when answering through a Quija Board.",
 	},
 	{
 		name: 'Yurei',
@@ -123,5 +123,29 @@ export const ghosts: Ghost[] = [
 		evidence: ['emf', 'fingerprints', 'writing'],
 		strengths: 'Is known to be quieter when hunting.',
 		weaknesses: 'More frequently make paranormal sounds.',
+	},
+	{
+		name: 'Onryo',
+		evidence: ['spiritbox', 'orb', 'temperature'],
+		strengths: 'Extinguishing a flame can cause an Onryo to attack.',
+		weaknesses: 'When threatened, this ghost will be less likely to hunt.',
+	},
+	{
+		name: 'The Twins',
+		evidence: ['emf', 'spiritbox', 'temperature'],
+		strengths: 'Either Twin can be angered and initiate an attack on their prey.',
+		weaknesses: 'The Twins will often interact with the environment at the same time.',
+	},
+	{
+		name: 'Raiju',
+		evidence: ['emf', 'orb', 'dots'],
+		strengths: 'Can siphon power from nearby electrical devices, making it move faster.',
+		weaknesses: 'Are constantly disrupting electronic equipment, making it easier to track when attacking.',
+	},
+	{
+		name: 'Obake',
+		evidence: ['emf', 'fingerprints', 'orb'],
+		strengths: 'When interacting with the environment, an Obake will rarely leave a trace.',
+		weaknesses: 'Sometimes this ghost will shapeshift, leaving behind unique evidence.',
 	},
 ];
