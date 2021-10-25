@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import { Global } from '@emotion/react';
 import { GlobalStyles } from 'twin.macro';
 import { useRouter } from 'next/router';
@@ -119,6 +120,19 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 				/>
 				<meta name="theme-color" content="#f9fafb" />
 			</Head>
+			<Script src="https://www.googletagmanager.com/gtag/js?id=G-M2Q8J76RZD" />
+			<Script
+				id="ga-track"
+				dangerouslySetInnerHTML={{
+					__html: `window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-M2Q8J76RZD', {
+	  page_path: window.location.pathname,
+	});`,
+				}}
+			/>
 			<GlobalStyles />
 			<Global styles={globalStyle} />
 			<AppContextProvider>
