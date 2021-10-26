@@ -1,58 +1,55 @@
+import Tanglewood from '@app/images/tanglewood.png';
+import Edgefield from '@app/images/edgefield.png';
+import Ridgeview from '@app/images/ridgeview.png';
+import Willow from '@app/images/willow.png';
+import Grafton from '@app/images/grafton.png';
+import Bleasdale from '@app/images/bleasdale.png';
+import Brownstone from '@app/images/brownstone.png';
+import Prison from '@app/images/prison.png';
+import Campsite from '@app/images/campsite.png';
+import Asylum from '@app/images/asylum.png';
+
 export type MapsTypes = keyof typeof maps;
 
 export const maps = {
 	tanglewood: {
 		alt: 'Tanglewood Street House',
-		src: '/images/tanglewood-street-house.webp',
-		width: 1000,
-		height: 984,
+		src: Tanglewood,
 	},
 	edgefield: {
 		alt: 'Edgefield Street House',
-		src: '/images/edgefield-street-house.webp',
-		width: 1000,
-		height: 806,
+		src: Edgefield,
 	},
 	ridgeview: {
 		alt: 'Ridgeview Road House',
-		src: '/images/ridgeview-road-house.webp',
-		width: 1000,
-		height: 852,
+		src: Ridgeview,
 	},
 	willow: {
 		alt: 'Willow Street House',
-		src: '/images/Map_Willow_Street_House.webp',
-		width: 622,
-		height: 500,
+		src: Willow,
 	},
 	grafton: {
 		alt: 'Grafton Farmhouse',
-		src: '/images/grafton-farmhouse.webp',
-		width: 992,
-		height: 1288,
+		src: Grafton,
 	},
 	bleasdale: {
 		alt: 'Bleasdale Farmhouse',
-		src: '/images/bleasdale-farmhouse.webp',
-		width: 1000,
-		height: 773,
+		src: Bleasdale,
 	},
 	brownstone: {
 		alt: 'Brownstone High School',
-		src: '/images/brownstone-high-school.webp',
-		width: 1000,
-		height: 382,
+		src: Brownstone,
 	},
 	prison: {
 		alt: 'Prison',
-		src: '/images/prision.webp',
-		width: 1000,
-		height: 562,
+		src: Prison,
+	},
+	campsite: {
+		alt: 'Maple Lodge Campsite',
+		src: Campsite,
 	},
 	asylum: {
 		alt: 'Asylum',
-		src: '/images/asylum.jpg',
-		width: 2798,
-		height: 1416,
+		src: Asylum,
 	},
 };

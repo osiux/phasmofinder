@@ -20,6 +20,8 @@ const Maps = () => {
 		<Layout>
 			<h1>Maps</h1>
 
+			<p>This awesome maps are provided by <a href="https://imgur.com/a/iEI0tJo">Fantismal</a>, Thanks a lot!</p>
+
 			<ButtonsContainer>
 				{Object.keys(maps).map((mapKey: MapsTypes) => {
 					const currentMap = maps[mapKey];
@@ -43,6 +45,7 @@ const Maps = () => {
 					<h2>{maps[map].alt}</h2>
 					<Image
 						layout="responsive"
+						placeholder="blur"
 						{...maps[map]}
 						alt={maps[map].alt}
 					/>
