@@ -148,4 +148,10 @@ export const ghosts: Ghost[] = [
 		strengths: 'When interacting with the environment, an Obake will rarely leave a trace.',
 		weaknesses: 'Sometimes this ghost will shapeshift, leaving behind unique evidence.',
 	},
+	{
+		name: 'The Mimic',
+		evidence: ['spiritbox', 'fingerprints', 'temperature'],
+		strengths: 'We are unsure of what this ghost is capable of. Be careful.',
+		weaknesses: 'Several reports have noted ghost orbs sightings near mimics.',
+	},
 ];
