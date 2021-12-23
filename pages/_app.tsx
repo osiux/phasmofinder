@@ -4,9 +4,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { Global } from '@emotion/react';
 import { GlobalStyles } from 'twin.macro';
-import { useRouter } from 'next/router';
-
-import * as gtag from '@app/ga';
+import PlausibleProvider from 'next-plausible';
 
 import globalStyle from '@app/styles/globals';
 import 'react-hint/css/index.css';
@@ -14,21 +12,6 @@ import 'react-hint/css/index.css';
 import { AppContextProvider } from '@app/contexts/AppContext';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-	const router = useRouter();
-
-	useEffect(() => {
-		const handleRouteChange = (url: URL) => {
-			if (typeof window.gtag !== 'undefined') {
-				gtag.pageview(url);
-			}
-		};
-
-		router.events.on('routeChangeComplete', handleRouteChange);
-		return () => {
-			router.events.off('routeChangeComplete', handleRouteChange);
-		};
-	}, [router.events]);
-
 	return (
 		<>
 			<Head>
@@ -120,24 +103,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 				/>
 				<meta name="theme-color" content="#f9fafb" />
 			</Head>
-			<Script src="https://www.googletagmanager.com/gtag/js?id=G-M2Q8J76RZD" />
-			<Script
-				id="ga-track"
-				dangerouslySetInnerHTML={{
-					__html: `window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-M2Q8J76RZD', {
-	  page_path: window.location.pathname,
-	});`,
-				}}
-			/>
 			<GlobalStyles />
 			<Global styles={globalStyle} />
-			<AppContextProvider>
-				<Component {...pageProps} />
-			</AppContextProvider>
+			<PlausibleProvider domain="phasmofinder.vercel.app">
+				<AppContextProvider>
+					<Component {...pageProps} />
+				</AppContextProvider>
+			</PlausibleProvider>
 		</>
 	);
 };
