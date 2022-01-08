@@ -102,6 +102,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 					content="/ms-icon-144x144.png"
 				/>
 				<meta name="theme-color" content="#f9fafb" />
+				<meta name="google-site-verification" content="azbYX-8XbCda_ZVih5pNga9eD4hvZBPg5GiY5-NIUKU" />
 			</Head>
 			<GlobalStyles />
 			<Global styles={globalStyle} />
