@@ -150,7 +150,7 @@ export const ghosts: Ghost[] = [
 	},
 	{
 		name: 'The Mimic',
-		evidence: ['spiritbox', 'fingerprints', 'temperature'],
+		evidence: ['spiritbox', 'fingerprints', 'temperature', 'orb'],
 		strengths: 'We are unsure of what this ghost is capable of. Be careful.',
 		weaknesses: 'Several reports have noted ghost orbs sightings near mimics.',
 	},
