@@ -154,4 +154,22 @@ export const ghosts: Ghost[] = [
 		strengths: 'We are unsure of what this ghost is capable of. Be careful.',
 		weaknesses: 'Several reports have noted ghost orbs sightings near mimics.',
 	},
+	{
+		name: 'Moroi',
+		evidence: ['spiritbox', 'writing', 'temperature'],
+		strengths: 'The weaker their victims, the stronger the Morai becomes.',
+		weaknesses: 'Moroi suffers from hyperosmia, weaking them for longer periods.',
+	},
+	{
+		name: 'Deogen',
+		evidence: ['spiritbox', 'writing', 'dots'],
+		strengths: 'Deogen constantly sense the living. You can run but you can\'t hide.',
+		weaknesses: 'Deogen require a lot of energy to form and will move very slowly.',
+	},
+	{
+		name: 'Thaye',
+		evidence: ['orb', 'writing', 'dots'],
+		strengths: 'Upon entering the location, Thaye will become active, defensive and agile.',
+		weaknesses: 'Thaye will weaken over time, making them weaker, slower and less aggressive.',
+	},
 ];
