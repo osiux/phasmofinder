@@ -20,7 +20,7 @@ export const evidenceTypes = {
 		icon: GiThermometerCold,
 	},
 	fingerprints: {
-		name: 'Fingerprints',
+		name: 'Ultraviolet',
 		icon: GiFingerPrint,
 	},
 	writing: {

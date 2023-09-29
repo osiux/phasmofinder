@@ -1,10 +1,7 @@
-import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Script from 'next/script';
 import { Global } from '@emotion/react';
 import { GlobalStyles } from 'twin.macro';
-import PlausibleProvider from 'next-plausible';
 
 import globalStyle from '@app/styles/globals';
 import 'react-hint/css/index.css';
@@ -102,15 +99,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 					content="/ms-icon-144x144.png"
 				/>
 				<meta name="theme-color" content="#f9fafb" />
-				<meta name="google-site-verification" content="azbYX-8XbCda_ZVih5pNga9eD4hvZBPg5GiY5-NIUKU" />
+				<meta
+					name="google-site-verification"
+					content="azbYX-8XbCda_ZVih5pNga9eD4hvZBPg5GiY5-NIUKU"
+				/>
 			</Head>
 			<GlobalStyles />
 			<Global styles={globalStyle} />
-			<PlausibleProvider domain="phasmofinder.vercel.app">
-				<AppContextProvider>
-					<Component {...pageProps} />
-				</AppContextProvider>
-			</PlausibleProvider>
+			<AppContextProvider>
+				<Component {...pageProps} />
+			</AppContextProvider>
 		</>
 	);
 };
